@@ -29,5 +29,5 @@ This project is a responsive, interactive calendar component built using React. 
 npm install
 npm run dev
 
--## 🌐 Live Demo
+- ## 🌐 Live Demo
 https://interactive-calenders.netlify.app/
