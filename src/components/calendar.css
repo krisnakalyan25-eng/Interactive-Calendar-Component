@@ -1,0 +1,276 @@
+.calendar-container {
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  font-family: sans-serif;
+}
+
+.hero {
+  position: relative;
+  height: 250px;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero img {
+  object-fit: cover;
+}
+
+.hero {
+  height: 350px; /* or 400px */
+}
+
+.overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* BOTTOM */
+.bottom {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  padding: 20px;
+  align-items: start;
+}
+
+/* CALENDAR */
+.calendar-grid {
+  background: #f9fafb;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* NOTES */
+.notes {
+  background: #f1f5f9;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.notes textarea {
+  width: 100%;
+  height: 150px;
+  margin-top: 10px;
+  padding: 10px;
+  resize: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .bottom {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* WEEKDAYS */
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+/* CELL */
+.cell {
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+
+  transition: all 0.25s ease;
+}
+
+.cell:hover {
+  background: #e2e8f0;
+  transform: scale(1.05);
+}
+.cell:hover {
+  background: #e2e8f0;
+  transform: scale(1.08);
+}
+.start,
+.end {
+  background: #2563eb;
+  color: white;
+  font-weight: bold;
+  transform: scale(1.1);
+}
+
+.inRange {
+  background: #bfdbfe;
+  transition: background 0.3s ease;
+}
+.overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.overlay button {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  color: white;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.overlay button:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.today {
+  border: 2px solid #ef4444;
+  font-weight: bold;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+
+  animation: fadeIn 0.3s ease;
+}
+
+.weekend {
+  background: #fef2f2;
+}
+
+.calendar-container.dark {
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+/* calendar section */
+.calendar-container.dark .calendar-grid {
+  background: #1e293b;
+}
+
+/* notes */
+.calendar-container.dark .notes {
+  background: #1e293b;
+}
+
+/* cells */
+.calendar-container.dark .cell {
+  background: #334155;
+  color: #e2e8f0;
+}
+
+/* hover */
+.calendar-container.dark .cell:hover {
+  background: #475569;
+}
+
+/* range */
+.calendar-container.dark .inRange {
+  background: #1d4ed8;
+}
+
+/* start/end */
+.calendar-container.dark .start,
+.calendar-container.dark .end {
+  background: #3b82f6;
+}
+
+/* today */
+.calendar-container.dark .today {
+  border: 2px solid #f87171;
+}
+
+.calendar-container.dark .hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+
+  pointer-events: none; /* 🔥 THIS FIXES CLICK ISSUE */
+}
+.calendar-container.dark .overlay {
+  color: white;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .notes {
+    order: -1; /* notes comes above calendar */
+  }
+}
+
+.grid {
+  animation: fadeIn 0.4s ease;
+}
+@media (max-width: 768px) {
+  .calendar-container {
+    border-radius: 0;
+  }
+
+  .hero {
+    height: 200px;
+  }
+
+  .overlay h1 {
+    font-size: 18px;
+  }
+
+  .bottom {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+
+  .calendar-grid {
+    padding: 10px;
+  }
+
+  .cell {
+    height: 50px; /* bigger touch area */
+    font-size: 14px;
+  }
+
+  .notes textarea {
+    height: 120px;
+  }
+}
