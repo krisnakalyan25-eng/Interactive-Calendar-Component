@@ -23,11 +23,13 @@ This project is a responsive, interactive calendar component built using React. 
 - Used localStorage for persistence (no backend required)
 - Component-based architecture for better maintainability
 
+- 
+- ## 🌐 Live Demo
+https://interactive-calenders.netlify.app/
+
+
 - ## 📦 How to Run Locally
 
 ```bash
 npm install
 npm run dev
-
-- ## 🌐 Live Demo
-https://interactive-calenders.netlify.app/
